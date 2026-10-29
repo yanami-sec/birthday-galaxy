@@ -8,14 +8,8 @@
 
 ## Inspiration
 
-The visual and interaction direction was inspired by this public Douyin demo:
-https://v.douyin.com/yZ8-TinPbQo/ — blessing cards forming a heart and an
-exploded-view galaxy cake that can be customized and assembled.
-The demo and user-provided screenshots were used as visual references. The
-creator's paid source code was not obtained or redistributed. This project is
-not an open-source edition of that paid product and is not affiliated with or
-endorsed by its creator. This acknowledgement is not a license to use the
-reference creator's code, assets or protectable visual expression.
+Thanks to [this Douyin birthday demo](https://v.douyin.com/yZ8-TinPbQo/)
+for the inspiration.
 
 The project grew from an exploration of birthday greetings and these references:
 

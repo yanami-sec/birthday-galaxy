@@ -116,9 +116,7 @@ npm run record:entry
 
 ## 致谢与许可
 
-**视觉与交互灵感**来自最初看到的[抖音生日祝福演示视频](https://v.douyin.com/yZ8-TinPbQo/)，包括祝福卡片汇成爱心，以及星河蛋糕拆分、搭配与合上的演示思路。感谢创作者带来的灵感。
-
-开发过程参考的是公开视频效果与用户提供的截图，没有获取或分发该视频作者的付费源码。本项目不是对方付费项目的开源版，与其作者没有合作或授权关系；这里的致谢不代表获得了对方代码、素材或设计的使用许可。本仓库的 MIT 许可证仅适用于本项目有权许可的代码，不覆盖外部参考作品。
+感谢[这条抖音生日祝福视频](https://v.douyin.com/yZ8-TinPbQo/)带来的灵感。
 
 灵感参考 [BirthdayWish](https://github.com/Seeingsprings/BirthdayWish)、[HappyBirthday_Yan-71b87](https://github.com/zonezz/HappyBirthday_Yan-71b87) 与 [Birthday-template](https://github.com/KernelCrafters/Birthday-template)。本仓库只发布重新实现的网页版，保留 [Three.js](https://github.com/mrdoob/three.js/tree/r128) 的 MIT 声明，详见 [第三方说明](web/THIRD-PARTY.md)。
 
