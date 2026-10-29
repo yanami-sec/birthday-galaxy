@@ -8,6 +8,15 @@
 
 ## Inspiration
 
+The visual and interaction direction was inspired by this public Douyin demo:
+https://v.douyin.com/yZ8-TinPbQo/ — blessing cards forming a heart and an
+exploded-view galaxy cake that can be customized and assembled.
+The demo and user-provided screenshots were used as visual references. The
+creator's paid source code was not obtained or redistributed. This project is
+not an open-source edition of that paid product and is not affiliated with or
+endorsed by its creator. This acknowledgement is not a license to use the
+reference creator's code, assets or protectable visual expression.
+
 The project grew from an exploration of birthday greetings and these references:
 
 - https://github.com/Seeingsprings/BirthdayWish — initial birthday greeting concept.
@@ -23,5 +32,7 @@ licenses of the referenced projects or imply their endorsement.
 
 ## Music
 
-No music recording is distributed in this repository. Optional music is supplied
+No music recording is distributed in this repository or its public demo videos.
+The downloadable demo videos in Releases have their audio tracks removed.
+Optional music is supplied
 by the person deploying the website and is not covered by this project's MIT license.

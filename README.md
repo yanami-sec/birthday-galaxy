@@ -6,6 +6,17 @@ A birthday wish among stars, with floating cards and a cake made just for you.
 
 ![星河蛋糕](docs/images/cake.jpg)
 
+## 完整演示视频
+
+两版都包含名字与生日输入开场、卡片爱心、蛋糕搭配、许愿和祝福信，时长约 45 秒，1080p / 30 fps。公开展示版不包含背景音乐；生日输入保持遮挡。视频单独保存在 Releases 中，克隆源码时无需下载。
+
+| 电脑横屏 · 1920 × 1080 | 手机竖屏 · 1080 × 1920 |
+| --- | --- |
+| <a href="https://github.com/yanami-sec/birthday-galaxy/releases/download/demo-v1/birthday-desktop.mp4"><img src="docs/images/demo-desktop.jpg" width="480" alt="下载电脑横屏完整演示"></a> | <a href="https://github.com/yanami-sec/birthday-galaxy/releases/download/demo-v1/birthday-mobile.mp4"><img src="docs/images/demo-mobile.jpg" width="180" alt="下载手机竖屏完整演示"></a> |
+| [下载电脑版 MP4](https://github.com/yanami-sec/birthday-galaxy/releases/download/demo-v1/birthday-desktop.mp4) | [下载手机版 MP4](https://github.com/yanami-sec/birthday-galaxy/releases/download/demo-v1/birthday-mobile.mp4) |
+
+点击封面或下载链接获取完整视频，也可以前往 [演示视频发布页](https://github.com/yanami-sec/birthday-galaxy/releases/tag/demo-v1) 查看两个附件。
+
 ## 可以玩什么
 
 - **专属开场**：名字与生日组成开启惊喜的仪式，祝福和数字蜡烛会使用对应的名字与生日年龄。
@@ -104,6 +115,10 @@ npm run record:entry
 第一步生成 40 秒的桌面展示，第二步添加 5 秒遮住生日输入的登录开场。竖屏使用 `npm run record`，再执行 `node scripts/add-recording-entry.cjs`。默认输出无声轨内容；需要配乐可设置 `BIRTHDAY_RECORD_MUSIC` 为有授权的本地音频绝对路径。视频、录制参数与截图位于 `artifacts/recordings/`，均不会上传到仓库。请检查成片中的姓名等内容后再公开分享。
 
 ## 致谢与许可
+
+**视觉与交互灵感**来自最初看到的[抖音生日祝福演示视频](https://v.douyin.com/yZ8-TinPbQo/)，包括祝福卡片汇成爱心，以及星河蛋糕拆分、搭配与合上的演示思路。感谢创作者带来的灵感。
+
+开发过程参考的是公开视频效果与用户提供的截图，没有获取或分发该视频作者的付费源码。本项目不是对方付费项目的开源版，与其作者没有合作或授权关系；这里的致谢不代表获得了对方代码、素材或设计的使用许可。本仓库的 MIT 许可证仅适用于本项目有权许可的代码，不覆盖外部参考作品。
 
 灵感参考 [BirthdayWish](https://github.com/Seeingsprings/BirthdayWish)、[HappyBirthday_Yan-71b87](https://github.com/zonezz/HappyBirthday_Yan-71b87) 与 [Birthday-template](https://github.com/KernelCrafters/Birthday-template)。本仓库只发布重新实现的网页版，保留 [Three.js](https://github.com/mrdoob/three.js/tree/r128) 的 MIT 声明，详见 [第三方说明](web/THIRD-PARTY.md)。
 
