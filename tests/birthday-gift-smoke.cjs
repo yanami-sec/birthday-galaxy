@@ -7,7 +7,7 @@ const unlock=require('./enter-birthday.cjs'),output=path.resolve(__dirname,'../a
  function watch(p){p.on('pageerror',e=>errors.push(String(e)));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});p.on('request',r=>requests.push(r.url()))}
  const birthdayAge=async(p,date)=>p.evaluate(async date=>{const {createBirthdayProfile}=await import('./birthday-profile.js?v=2');return createBirthdayProfile('测试',date).birthdayAge;},date);
  const cake=async p=>{await p.locator('#start').click();await p.locator('#enter-cake').click({timeout:12000});await p.waitForFunction(()=>!document.getElementById('studio-edit').disabled)};
- const wish=async p=>{await p.locator('#studio-confirm').click();await p.keyboard.down('Space');await p.waitForTimeout(3000);await p.keyboard.up('Space');await p.locator('#wish-letter-dialog').waitFor({state:'visible',timeout:10000})};
+ const wish=async p=>{await p.locator('#studio-confirm').click();await p.keyboard.down('Space');await p.waitForFunction(()=>document.getElementById('studio-wish-progress').value>=100,{},{timeout:45000});await p.keyboard.up('Space');await p.locator('#wish-letter-dialog').waitFor({state:'visible',timeout:30000})};
  try{
   await fs.mkdir(output,{recursive:true});const context=await browser.newContext({viewport:{width:1440,height:960}});const page=await context.newPage();watch(page);await page.goto(BASE_URL);
   assert.equal(await page.locator('#identity-screen').isVisible(),true);assert.equal(await page.locator('#start').isVisible(),false);await page.keyboard.press('r');assert.equal(await page.locator('.wish-card').count(),0);await page.locator('#birthday-name').fill('');
