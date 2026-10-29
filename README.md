@@ -4,6 +4,8 @@ A birthday wish among stars, with floating cards and a cake made just for you.
 
 把一句生日快乐，变成一场可以亲手参与的小惊喜。输入名字与生日，点亮开场蛋糕，让祝福卡片汇成爱心，再到星河里制作属于自己的蛋糕、许愿、收下一封祝福信。
 
+**[在线体验 →](https://yanami-sec.github.io/birthday/)** · 电脑和手机均可直接打开，无需下载或安装。
+
 ![星河蛋糕](docs/images/cake.jpg)
 
 ## 完整演示视频
