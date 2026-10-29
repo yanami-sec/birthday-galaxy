@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {arrivalOffset,arrivalDuration,layerArrival} from '../web/cake-arrival.js';
+import {buildCakeModel,DEFAULT_DESIGN} from '../web/workshop-model.js';
+const THREE=createRequire(import.meta.url)('../web/vendor/three-r128.min.js');
+assert.equal(arrivalOffset(0,12),12);assert.equal(arrivalOffset(1,12),0);
+for(let i=1;i<78;i++)assert.ok(arrivalOffset(i/100,12)<arrivalOffset((i-1)/100,12));
+assert.ok(arrivalOffset(.88,12)>0&&arrivalOffset(.88,12)<.13);
+const model=buildCakeModel(THREE,{...DEFAULT_DESIGN,layers:3,candles:'number',age:19});
+const plate=model.parts.find(p=>p.dropRank===0),layers=model.parts.filter(p=>/^第\d+层$/.test(p.group.name));
+model.setExplode(1);const positions=model.parts.map(p=>p.group.position.y);
+model.setEntrance(0,true,14);model.setExplode(1);assert.equal(model.root.position.y,0);assert.equal(plate.group.position.y,plate.y);assert.ok(layers.every(p=>!p.group.visible));
+model.setEntrance(.3,true,14);model.setExplode(1);assert.ok(layers[0].arrivalProgress>layers[1].arrivalProgress);assert.ok(layers[1].arrivalProgress>layers[2].arrivalProgress);
+assert.equal(plate.group.position.y,plate.y);assert.equal(plate.arrivalOffset,0);assert.ok(model.parts.every(p=>p.group.scale.x===1));
+model.setEntrance(1);model.setExplode(1);assert.deepEqual(model.parts.map(p=>p.group.position.y),positions);
+assert.ok(model.parts.every(p=>p.group.visible&&p.arrivalOffset===0));
+const plateMat=new Set(),bodyMat=new Set();model.parts.forEach(p=>p.group.traverse(o=>{if(o.material)(p.dropRank===0?plateMat:bodyMat).add(o.material)}));
+assert.ok([...plateMat].every(m=>!bodyMat.has(m)),'Tray opacity must be independent of shared cake trim');
+model.setEntrance(.4,false);assert.ok([...plateMat].every(m=>m.opacity===1));assert.ok([...bodyMat].every(m=>m.opacity<=.4));assert.equal(model.root.position.y,0);
+model.keepPlateOnly();assert.ok(model.parts.every(p=>p.group.visible===(p.dropRank===0)));model.fadePlate(.5);assert.ok([...plateMat].every(m=>m.opacity===.5));
+for(const n of [1,2,3]){assert.ok(arrivalDuration(n)<2);for(let rank=1;rank<=n+2;rank++)assert.deepEqual(layerArrival(1,rank,n),{progress:1,offset:0,visible:true});}
+model.dispose();console.log('Layered arrival: fixed tray, independent crossfade, bottom-to-top order, retained separation, fade-out and disposal passed');

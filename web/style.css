@@ -1,0 +1,132 @@
+:root { color-scheme: light; font-family: "Microsoft YaHei", "PingFang SC", sans-serif; color: #765367; --card-width: 194px; --card-height: 120px; }
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { width: 100%; min-width: 280px; height: 100%; margin: 0; }
+body { overflow: hidden; background: #f8ebed; background-image: radial-gradient(ellipse at 16% 77%, #fcf4db 0%, transparent 49%), radial-gradient(ellipse at 87% 35%, #efc9db 0%, transparent 58%), radial-gradient(ellipse at 20% 12%, #f3dbe5 0%, transparent 58%); }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, a:focus-visible { outline: 3px solid #b67595; outline-offset: 5px; }
+.ambient { position: fixed; inset: 0; pointer-events: none; opacity: .55; background-image: radial-gradient(circle at 14% 28%, #fff 0 1px, transparent 2px), radial-gradient(circle at 83% 74%, #fff 0 1.5px, transparent 3px), radial-gradient(circle at 64% 14%, #fff 0 1px, transparent 2px), radial-gradient(circle at 29% 83%, #fff 0 2px, transparent 4px), radial-gradient(circle at 72% 89%, #fff 0 1px, transparent 2px); }
+.page-header { position: fixed; inset: 0 0 auto; height: 86px; display: flex; align-items: center; justify-content: space-between; padding: 0 4.5vw; z-index: 2; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #865e73; font-size: 14px; letter-spacing: 2px; }
+.brand-heart { font-family: "Segoe UI Symbol", sans-serif; font-size: 34px; font-weight: 300; }
+.brand small { display: block; margin-top: 6px; font-size: 8px; letter-spacing: 2.2px; opacity: .62; }
+.header-note { font-size: 11px; letter-spacing: 3px; opacity: .65; }
+.experience { height: 100%; padding: 62px 24px 78px; }
+.stage { position: relative; width: 100%; height: 100%; max-width: 1600px; margin: 0 auto; }
+.birthday-copy { position: absolute; left: 50%; top: 48%; transform: translate(-50%, -50%); text-align: center; width: min(70vw, 620px); pointer-events: none; z-index: 1; }
+.eyebrow { font-size: 9px; letter-spacing: 3.8px; color: #aa7a90; }
+.birthday-copy h1 { margin: 19px 0 0; font: 500 clamp(42px, 7vw, 94px)/1.3 "STXingkai", "KaiTi", "FangSong", serif; letter-spacing: .13em; color: #b75b79; text-shadow: 0 2px 0 #ffffff68; }
+.handwriting { display: block; margin-top: -8px; font: italic clamp(34px, 4.7vw, 64px)/1.1 "Brush Script MT", "Segoe Script", cursive; color: #c17d96; opacity: .7; }
+.birthday-copy p { margin: 20px 0 0; color: #a87588; font-size: 11px; letter-spacing: 4px; }
+.awaiting-start .birthday-copy { width: 92vw; }
+.awaiting-start .birthday-copy h1 { font-size: clamp(64px, 12vw, 166px); letter-spacing: .13em; }
+.awaiting-start .handwriting { font-size: clamp(44px, 7vw, 100px); }
+.awaiting-start .birthday-copy .eyebrow, .awaiting-start .birthday-copy p, .awaiting-start .status { visibility: hidden; }
+.intro-screen { position: fixed; inset: 0; z-index: 10; display: grid; place-items: center; background: radial-gradient(ellipse at 50% 43%, #eecde428 0%, #a280b142 70%, #6c426663 100%); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.intro-content { display: flex; flex-direction: column; align-items: center; padding: 24px; }
+.intro-dedication { font: 8px/1.6 "Segoe UI", sans-serif; letter-spacing: 3.4px; color: #805874; margin-bottom: 8px; opacity: .8; text-align: center; }
+.intro-invitation { position: relative; display: block; width: min(360px, calc(100vw - 44px)); aspect-ratio: 360 / 340; padding: 0; border: 0; border-radius: 30px; color: #79526f; background: transparent; transition: transform .25s; }
+.intro-invitation:hover { transform: translateY(-5px); }
+.intro-invitation:active { transform: translateY(-1px); }
+.cake-plate { position: absolute; left: 2%; top: 84%; width: 96%; height: 10%; border: 1px solid #ffffff8c; border-radius: 50%; background: linear-gradient(180deg, #fff9ff61, #f2dfef2e); box-shadow: 0 16px 24px #76547422, inset 0 2px 0 #fff6; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.cake-tier { position: absolute; border: 1px solid #ffffffe0; border-top-color: transparent; border-radius: 9% 9% 30% 30% / 15% 15% 28% 28%; background: linear-gradient(110deg, #ffffff75 0%, #fff8ff30 45%, #efd4e86b 100%); box-shadow: inset 3px 0 10px #ffffff42, inset -4px -5px 13px #b78caf18, 0 8px 18px #754e7514; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+.cake-lower { z-index: 1; left: 7%; top: 58%; width: 86%; height: 30%; }
+.cake-top { position: absolute; border: 1px solid #ffffffe0; border-radius: 50%; background: linear-gradient(135deg, #ffffff94, #ffeffa38); box-shadow: inset 0 2px 7px #ffffff38; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); }
+.cake-lower-top { z-index: 2; left: 7%; top: 51%; width: 86%; height: 17%; }
+.cake-upper { z-index: 3; left: 18%; top: 33%; width: 64%; height: 29%; }
+.cake-upper-top { z-index: 4; left: 18%; top: 25%; width: 64%; height: 17%; }
+.cake-icing { position: absolute; z-index: 5; left: 18%; top: 33%; width: 64%; height: 14%; overflow: visible; }
+.cake-pearls { position: absolute; z-index: 5; left: 20%; top: 30%; width: 60%; height: 9%; border-radius: 50%; background: radial-gradient(ellipse, #fff9 0 40%, transparent 46%) left bottom / 19px 12px repeat-x; }
+.cake-decoration { position: absolute; z-index: 6; left: 20%; top: 48%; width: 60%; color: #a87597; font-family: "Segoe UI Symbol", sans-serif; font-size: 17px; opacity: .65; }
+.cake-candle { position: absolute; z-index: 7; left: 48.3%; top: 9%; width: 3.4%; height: 24%; border: 1px solid #fff9; border-radius: 4px; background: repeating-linear-gradient(32deg, #fff8 0 7px, #cb9dbb8c 7px 14px); box-shadow: inset 1px 0 2px #fff9, 0 2px 8px #8e628e1a; }
+.cake-candle::before{content:"";position:absolute;left:43%;bottom:100%;width:2px;height:8px;background:#795569;border-radius:2px}
+.cake-flame { position: absolute; left: -40%; bottom: 106%; width: 180%; height: 45%; border-radius: 75% 25% 65% 35%; background: linear-gradient(130deg, #fffef2 0%, #ffd789 48%, #eea17cc7 100%); transform-origin:50% 100%; box-shadow: 0 0 19px #fff4baab, 0 0 35px #ffcfda5c; animation: candle-sway 1.15s ease-in-out infinite; will-change:transform; }
+.cake-flame::before{content:"";position:absolute;inset:28% 21% 6%;border-radius:75% 25% 65% 35%;background:linear-gradient(#fffef9,#fff5bb);animation:flame-core .73s ease-in-out infinite alternate}
+.cake-flame::after{content:"";position:absolute;inset:-45% -90%;border-radius:50%;background:radial-gradient(ellipse,#ffeabf50,transparent 68%);animation:flame-halo 1.7s ease-in-out infinite alternate;pointer-events:none}
+@keyframes candle-sway{0%,100%{transform:rotate(-23deg) scale(.96,1.02)}20%{transform:rotate(-36deg) scale(1.08,.92)}44%{transform:rotate(-16deg) scale(.9,1.12)}68%{transform:rotate(-31deg) scale(1.03,.96)}85%{transform:rotate(-20deg) scale(.96,1.07)}}
+@keyframes flame-core{from{opacity:.62;transform:scale(.8,.85)}to{opacity:1;transform:scale(1.1,1.05)}}
+@keyframes flame-halo{from{opacity:.45;transform:scale(.85)}to{opacity:.95;transform:scale(1.2)}}
+.cake-copy { position: absolute; z-index: 8; left: 10%; top: 69%; width: 80%; display: flex; flex-direction: column; align-items: center; }
+.intro-title { font-size: clamp(16px, 4.3vw, 19px); font-weight: 600; letter-spacing: 2px; }
+.intro-description { margin-top: 9px; font-size: clamp(8px, 2.2vw, 10px); letter-spacing: .8px; line-height: 1.8; color: #906e88; }
+.intro-quiet { padding: 14px; margin-top: 9px; border: 0; background: transparent; color: #8e7087; font-size: 10px; letter-spacing: 1px; }
+.intro-quiet:hover { color: #704967; }
+.intro-quiet span { margin-left: 6px; }
+.intro-footer { position: absolute; bottom: max(35px, env(safe-area-inset-bottom)); padding: 0 16px; margin: 0; text-align: center; font-size: 10px; letter-spacing: 3px; color: #896680; }
+.cards { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.cards.beating { animation: heart-beat 1.8s ease-in-out infinite; will-change: transform; }
+@keyframes heart-beat {
+  0%, 48%, 100% { transform: scale(1); }
+  13% { transform: scale(1.045); }
+  23% { transform: scale(1.008); }
+  33% { transform: scale(1.028); }
+}
+.wish-card { position: absolute; width: var(--card-width); height: var(--card-height); padding: 0; overflow: hidden; border: 1px solid #ffffffd9; border-radius: 11px; color: #655361; background: linear-gradient(153deg, var(--paper-top), var(--paper-bottom)); box-shadow: 0 5px 10px #71445c1a, 0 1px 2px #71445c18, inset 0 1px 0 #fff; opacity: 0; transform: translateY(10px) scale(.97); transition: opacity .18s ease-out, transform .22s ease-out; }
+.wish-card.visible { opacity: 1; transform: translateY(0) scale(1); }
+.cards.is-interactive .wish-card{cursor:grab;touch-action:none;user-select:none}
+.cards.is-interactive .wish-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.cards.interacting{animation-play-state:paused}
+.cards .wish-card.dragging{cursor:grabbing;box-shadow:0 15px 34px #71445c40,0 2px 5px #71445c25;transition:none}
+.cards:not(.is-interactive){pointer-events:none}
+.card-header { height: 30px; margin: 0 11px; display: flex; align-items: center; gap: 7px; border-bottom: 1px solid color-mix(in srgb, var(--accent) 19%, transparent); color: var(--accent); }
+.card-heart { font: 18px/1 "Segoe UI Symbol", sans-serif; }
+.card-label { font-size: 8px; letter-spacing: 1px; }
+.card-close { border: 0; background: transparent; color: var(--accent); margin-left: auto; margin-right: -7px; padding: 0; width: 28px; height: 28px; font: 20px/1 Arial, sans-serif; opacity: .75; }
+.card-close:hover { opacity: 1; color: #a64670; }
+.card-message { display: flex; justify-content: center; align-items: center; height: calc(var(--card-height) - 52px); margin: 0; padding: 0 14px; font-size: 12px; font-weight: 600; line-height: 1.65; text-align: center; }
+.card-footer { position: absolute; inset: auto 0 10px; text-align: center; font: 6px/1 "Segoe UI", sans-serif; letter-spacing: 2.3px; color: var(--accent); opacity: .85; }
+.status { position: fixed; bottom: 83px; left: 0; right: 0; margin: 0; color: #aa7a90; text-align: center; font-size: 10px; letter-spacing: 2px; pointer-events: none; }
+.controls { position: fixed; bottom: max(24px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); z-index: 3; display: flex; align-items: center; padding: 5px; border: 1px solid #ffffffc7; border-radius: 100px; background: #fffaf9ba; box-shadow: 0 6px 25px #975f7810; backdrop-filter: blur(18px); white-space: nowrap; }
+.controls button { display: flex; align-items: center; gap: 8px; border: 0; border-radius: 100px; background: transparent; padding: 10px 20px; color: #8e697c; font-size: 11px; transition: background .15s; }
+.controls button > span:first-child { font: 19px/1 "Segoe UI Symbol", sans-serif; }
+.controls button:hover { background: #f2e0e9; }
+.controls .exit-button { color: #ac6282; }
+.controls button[aria-pressed="true"] { color: #a85d81; background: #f2e0e966; }
+.controls button:disabled{opacity:.4;cursor:default}
+.control-divider { width: 1px; height: 15px; background: #ddc5d366; }
+.end-screen { position: fixed; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 24px; }
+.end-heart { font: 100px/1.3 "Segoe UI Symbol", sans-serif; color: #ba7b98; }
+.end-screen h1 { font-size: clamp(21px, 3vw, 34px); font-weight: 400; letter-spacing: 3px; margin: 22px 0 14px; }
+.end-screen p { font-size: 12px; color: #a07d8d; line-height: 1.8; }
+.primary-button { border: 1px solid #fff8; border-radius: 100px; background: #b77493; color: white; padding: 13px 24px; margin-top: 25px; font-size: 12px; box-shadow: 0 5px 15px #a66c8720; }
+.primary-button span { margin-left: 20px; }
+@media (max-width: 600px) {
+  .page-header { height: 74px; padding: 0 22px; }
+  .brand { font-size: 11px; letter-spacing: 1px; gap: 8px; }
+  .brand-heart { font-size: 28px; }
+  .brand small { font-size: 6px; letter-spacing: 1.4px; }
+  .header-note { display: none; }
+  .experience { padding: 68px 10px 96px; }
+  .birthday-copy { top: 47%; }
+  .birthday-copy h1 { font-size: 42px; letter-spacing: .06em; margin-top: 12px; }
+  .birthday-copy .eyebrow { font-size: 6px; letter-spacing: 1.5px; }
+  .handwriting { font-size: 31px; margin-top: 1px; }
+  .birthday-copy p { font-size: 8px; letter-spacing: 2px; margin-top: 12px; }
+  .wish-card { border-radius: 8px; }
+  .card-header { height: 22px; margin: 0 7px; gap: 4px; }
+  .card-label { font-size: 6px; letter-spacing: 0; }
+  .card-heart { font-size: 12px; }
+  .card-close { width: 22px; height: 22px; margin-right: -4px; font-size: 16px; }
+  .card-message { height: calc(var(--card-height) - 39px); padding: 0 8px; font-size: 9px; line-height: 1.5; }
+  .card-footer { font-size: 4px; bottom: 7px; letter-spacing: 1px; }
+  .controls button { padding: 10px 12px; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) { .wish-card, .intro-invitation { transition: none; } .cards.beating, .cake-flame { animation: none; will-change: auto; } }
+
+.cake-entry { pointer-events: auto; display: inline-flex; align-items: center; gap: 12px; margin-top: 24px; padding: 12px 22px; border: 1px solid #ffffffd9; border-radius: 100px; background: #fff9f9d9; color: #9e607e; box-shadow: 0 6px 24px #9d668122; font-size: 12px; }
+.cake-entry:hover { background: white; transform: translateY(-2px); }
+.cake-entry:disabled { cursor: wait; opacity: .65; }
+@media (max-width: 600px) { .cake-entry { margin-top: 17px; padding: 10px 15px; font-size: 10px; gap: 6px; } }
+.card-reader{width:min(430px,calc(100vw - 32px));max-height:calc(100dvh - 40px);padding:0;border:1px solid #fff;border-radius:23px;color:#755568;background:linear-gradient(145deg,var(--paper-top,#fff9fa),var(--paper-bottom,#f5dce5));box-shadow:0 24px 90px #71445c35;overflow:auto}
+.card-reader::backdrop{background:#73506430;backdrop-filter:blur(4px)}
+.card-reader-paper{padding:35px 30px;text-align:center}
+.card-reader-heart{font:42px/1.2 "Segoe UI Symbol",sans-serif;color:var(--accent,#b46b89)}
+.card-reader h2{font-size:10px;font-weight:400;letter-spacing:3px;color:var(--accent,#b46b89);margin:14px 0 24px}
+.card-reader #card-reader-message{font:500 clamp(21px,5.5vw,27px)/1.8 "KaiTi","Microsoft YaHei",serif;margin:0;overflow-wrap:anywhere}
+.card-reader-note{display:block;margin:25px 0;color:var(--accent,#b46b89);font-size:9px;letter-spacing:2px;opacity:.8}
+.card-reader-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.card-reader-actions button{padding:11px 20px;border:1px solid #fff;border-radius:100px;background:#ffffff9c;color:#91677e;font-size:11px}
+.card-reader-actions button:first-child{background:var(--accent,#b46b89);color:#fff}
+@media(max-width:600px){.card-reader-paper{padding:28px 23px}.status{padding:0 18px;font-size:9px;letter-spacing:1px}}
+@media(prefers-reduced-motion:reduce){.cake-flame,.cake-flame::before,.cake-flame::after{animation:none;will-change:auto}}

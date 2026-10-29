@@ -1,0 +1,19 @@
+{
+  "name": "birthday-galaxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A personal birthday wish among stars, with an interactive 3D cake atelier.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/serve.cjs",
+    "dev": "node scripts/serve.cjs",
+    "test": "node --test tests/birthday-profile.mjs tests/workshop-model.mjs tests/cake-arrival.mjs tests/cake-inspiration.mjs tests/remix-timeline.mjs",
+    "test:browser": "node scripts/test-browser.cjs",
+    "record": "node scripts/record-birthday.cjs",
+    "record:desktop": "node scripts/record-birthday.cjs --desktop",
+    "record:entry": "node scripts/add-recording-entry.cjs --desktop"
+  },
+  "devDependencies": { "playwright": "1.64.1" }
+}
